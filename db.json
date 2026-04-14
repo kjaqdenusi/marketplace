@@ -1,0 +1,61 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Crest Extra Fluoride Toothpaste",
+      "price": 2.99,
+      "description": "Cavity protection with extra fluoride for stronger teeth.",
+      "image": "about:blank"
+    },
+    {
+      "id": 2,
+      "name": "Arm & Hammer Toothpaste",
+      "price": 2.5,
+      "description": "Baking soda formula for a deep clean and fresh breath.",
+      "image": "about:blank"
+    },
+    {
+      "id": 3,
+      "name": "Colgate Fresh Toothpaste",
+      "price": 3.5,
+      "description": "Triple action formula for whitening, cavity protection, and fresh breath.",
+      "image": "about:blank"
+    },
+    {
+      "id": 4,
+      "name": "Oral-B Electric Toothbrush",
+      "price": 29.99,
+      "description": "Removes up to 100% more plaque than a regular manual toothbrush.",
+      "image": "about:blank"
+    },
+    {
+      "id": 5,
+      "name": "Listerine Cool Mint Mouthwash",
+      "price": 5.99,
+      "description": "Kills 99.9% of germs that cause bad breath and gum disease.",
+      "image": "about:blank"
+    },
+    {
+      "id": 6,
+      "name": "Colgate Floss Picks",
+      "price": 4.49,
+      "description": "Easy-grip floss picks for comfortable daily flossing.",
+      "image": "about:blank"
+    },
+    {
+      "id": 7,
+      "name": "Sensodyne Toothpaste",
+      "price": 6.99,
+      "description": "Clinically proven relief for sensitive teeth.",
+      "image": "about:blank"
+    },
+    {
+      "id": 8,
+      "name": "Crest 3D Whitening Strips",
+      "price": 14.99,
+      "description": "Professional-grade whitening in just 30 minutes a day.",
+      "image": "about:blank"
+    }
+  ],
+  "cart": []
+}
