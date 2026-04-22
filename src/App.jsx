@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Card from './components/Card'
-import Cart from './components/Cart'
+import ShoppingCart from './components/ShoppingCart'
 
 const API_URL = 'http://localhost:5000'
 
@@ -149,7 +149,7 @@ function App() {
         <Route
           path="/cart"
           element={
-            <Cart
+            <ShoppingCart
               cart={cart}
               onRemove={removeFromCart}
               onUpdateQuantity={updateQuantity}
