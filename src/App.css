@@ -1,9 +1,45 @@
 body {
-  background-color: #f3f3f3;
+  background-color: #EAEDED;
 }
 
+/* Navbar */
+.navbar {
+  background-color: #131921 !important;
+}
+
+/* Carousel */
+.carousel-img {
+  height: 350px;
+  object-fit: cover;
+}
+
+/* Cards */
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
 
 .card-img-top {
-  height: 180px;
+  height: 160px;
   object-fit: cover;
+  cursor: pointer;
+}
+
+.price {
+  font-weight: bold;
+  color: #B12704;
+  font-size: 1.1rem;
+}
+
+/* Section headings */
+.section-title {
+  border-left: 4px solid #FF9900;
+  padding-left: 10px;
+  margin-bottom: 16px;
+}
+
+/* Add to Cart button color */
+.btn-warning {
+  background-color: #FFD814;
+  border-color: #FFA41C;
 }

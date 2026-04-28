@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 function Card({ product, onAddToCart }) {
   const navigate = useNavigate()
@@ -11,12 +11,14 @@ function Card({ product, onAddToCart }) {
 
   return (
     <div className="card">
-      <img src={product.image} className="card-img-top" alt={product.name} />
+      <Link to={`/product/${product.id}`}>
+        <img src={product.image} className="card-img-top" alt={product.name} />
+      </Link>
       <div className="card-body">
-        <h5 className="card-title">{product.name}</h5>
+        <h6 className="card-title">{product.name}</h6>
         <p className="card-text">{product.description}</p>
-        <p><strong>${product.price.toFixed(2)}</strong></p>
-        <button className="btn btn-warning" onClick={handleAddToCart}>
+        <p className="price">${product.price.toFixed(2)}</p>
+        <button className="btn btn-warning w-100" onClick={handleAddToCart}>
           Add to Cart
         </button>
       </div>

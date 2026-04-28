@@ -5,168 +5,192 @@
       "name": "Crest Extra Fluoride Toothpaste",
       "price": 2.99,
       "description": "Cavity protection with extra fluoride for stronger teeth.",
-      "image": "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=300&h=200&fit=crop",
+      "bestSeller": false
     },
     {
       "id": 2,
       "name": "Arm & Hammer Toothpaste",
       "price": 2.50,
       "description": "Baking soda formula for a deep clean and fresh breath.",
-      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop",
+      "bestSeller": false
     },
     {
       "id": 3,
       "name": "Colgate Fresh Toothpaste",
       "price": 3.50,
       "description": "Triple action formula for whitening, cavity protection, and fresh breath.",
-      "image": "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=300&h=200&fit=crop",
+      "bestSeller": false
     },
     {
       "id": 4,
       "name": "Oral-B Electric Toothbrush",
       "price": 29.99,
       "description": "Removes up to 100% more plaque than a regular manual toothbrush.",
-      "image": "https://images.unsplash.com/photo-1559591935-b3b1d1932d95?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1559591935-b3b1d1932d95?w=300&h=200&fit=crop",
+      "bestSeller": true
     },
     {
       "id": 5,
       "name": "Listerine Cool Mint Mouthwash",
       "price": 5.99,
       "description": "Kills 99.9% of germs that cause bad breath and gum disease.",
-      "image": "https://images.unsplash.com/photo-1631390090198-b7f59ab98f88?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1631390090198-b7f59ab98f88?w=300&h=200&fit=crop",
+      "bestSeller": false
     },
     {
       "id": 6,
       "name": "Colgate Floss Picks",
       "price": 4.49,
       "description": "Easy-grip floss picks for comfortable daily flossing.",
-      "image": "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=300&h=200&fit=crop",
+      "bestSeller": false
     },
     {
       "id": 7,
       "name": "Sensodyne Toothpaste",
       "price": 6.99,
       "description": "Clinically proven relief for sensitive teeth.",
-      "image": "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=300&h=200&fit=crop",
+      "bestSeller": false
     },
     {
       "id": 8,
       "name": "Crest 3D Whitening Strips",
       "price": 14.99,
       "description": "Professional-grade whitening in just 30 minutes a day.",
-      "image": "https://images.unsplash.com/photo-1445633743309-b60418bedbf2?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1445633743309-b60418bedbf2?w=300&h=200&fit=crop",
+      "bestSeller": false
     },
     {
       "id": 9,
       "name": "Apple AirPods Pro",
       "price": 249.99,
       "description": "Active noise cancellation, transparency mode, and spatial audio.",
-      "image": "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=300&h=200&fit=crop",
+      "bestSeller": true
     },
     {
       "id": 10,
       "name": "Sony WH-1000XM5 Headphones",
       "price": 349.99,
       "description": "Industry-leading noise canceling with crystal clear hands-free calling.",
-      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop",
+      "bestSeller": true
     },
     {
       "id": 11,
       "name": "Logitech MX Master 3 Mouse",
       "price": 99.99,
       "description": "Advanced wireless mouse for precision and comfort all day long.",
-      "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300&h=200&fit=crop",
+      "bestSeller": false
     },
     {
       "id": 12,
       "name": "Mechanical Keyboard",
       "price": 79.99,
       "description": "Compact TKL layout with blue switches for a satisfying typing experience.",
-      "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=300&h=200&fit=crop",
+      "bestSeller": false
     },
     {
       "id": 13,
       "name": "USB-C Hub 7-in-1",
       "price": 39.99,
       "description": "Expand your laptop with HDMI, USB 3.0, SD card, and more.",
-      "image": "https://images.unsplash.com/photo-1625895197185-efcec01cffe0?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1625895197185-efcec01cffe0?w=300&h=200&fit=crop",
+      "bestSeller": false
     },
     {
       "id": 14,
       "name": "Anker 65W Charger",
       "price": 25.99,
       "description": "Fast charging for laptops, tablets, and phones in one compact brick.",
-      "image": "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300&h=200&fit=crop",
+      "bestSeller": false
     },
     {
       "id": 15,
       "name": "Hydro Flask Water Bottle",
       "price": 44.95,
       "description": "Keeps drinks cold 24 hours and hot 12 hours with TempShield insulation.",
-      "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&h=200&fit=crop",
+      "bestSeller": true
     },
     {
       "id": 16,
       "name": "Moleskine Classic Notebook",
       "price": 19.99,
       "description": "Hard cover ruled notebook, the legendary choice for writers and thinkers.",
-      "image": "https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=300&h=200&fit=crop",
+      "bestSeller": false
     },
     {
       "id": 17,
       "name": "Desk Lamp with USB Port",
       "price": 34.99,
       "description": "LED desk lamp with adjustable brightness and built-in USB charging port.",
-      "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=300&h=200&fit=crop",
+      "bestSeller": false
     },
     {
       "id": 18,
       "name": "Yoga Mat",
       "price": 27.99,
       "description": "Non-slip, eco-friendly mat with alignment lines for all types of yoga.",
-      "image": "https://images.unsplash.com/photo-1592432678016-e910b452f9a2?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1592432678016-e910b452f9a2?w=300&h=200&fit=crop",
+      "bestSeller": false
     },
     {
       "id": 19,
       "name": "Resistance Bands Set",
       "price": 15.99,
       "description": "Set of 5 bands with varying resistance levels for home workouts.",
-      "image": "https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=300&h=200&fit=crop",
+      "bestSeller": false
     },
     {
       "id": 20,
       "name": "Stainless Steel Pan Set",
       "price": 89.99,
       "description": "3-piece tri-ply stainless steel cookware set, oven safe up to 500°F.",
-      "image": "https://images.unsplash.com/photo-1584990347449-39ce4e5f2835?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1584990347449-39ce4e5f2835?w=300&h=200&fit=crop",
+      "bestSeller": false
     },
     {
       "id": 21,
       "name": "French Press Coffee Maker",
       "price": 29.99,
       "description": "Brew rich, full-bodied coffee in just 4 minutes with this classic press.",
-      "image": "https://images.unsplash.com/photo-1614278658663-0af5cbe22046?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1614278658663-0af5cbe22046?w=300&h=200&fit=crop",
+      "bestSeller": true
     },
     {
       "id": 22,
       "name": "Backpack 30L",
       "price": 59.99,
       "description": "Lightweight and durable backpack with laptop sleeve and multiple pockets.",
-      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=200&fit=crop",
+      "bestSeller": true
     },
     {
       "id": 23,
       "name": "Sunglasses Polarized",
       "price": 22.99,
       "description": "UV400 protection polarized lenses in a classic wayfarer frame.",
-      "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=200&fit=crop",
+      "bestSeller": false
     },
     {
       "id": 24,
       "name": "Wireless Phone Stand Charger",
       "price": 18.99,
       "description": "10W fast wireless charging stand compatible with all Qi-enabled devices.",
-      "image": "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300&h=200&fit=crop"
+      "image": "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300&h=200&fit=crop",
+      "bestSeller": false
     }
   ],
   "cart": []

@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Card from './components/Card'
 import ShoppingCart from './components/ShoppingCart'
+import ProductDetail from './components/ProductDetail'
 
 const API_URL = 'http://localhost:5000'
 
@@ -75,10 +76,11 @@ function App() {
     setCart(cart.map(item => (item.id === id ? updated : item)))
   }
 
-  // Filter products by search query
   const filteredProducts = products.filter(p =>
     p.name.toLowerCase().includes(searchQuery.toLowerCase())
   )
+
+  const bestSellers = products.filter(p => p.bestSeller === true)
 
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0)
 
@@ -94,27 +96,27 @@ function App() {
           path="/"
           element={
             <>
-              {/* Carousel — only show on the main browse page, not during search */}
+              {/* Carousel — hidden when user is searching */}
               {searchQuery === '' && (
                 <div id="heroCarousel" className="carousel slide" data-bs-ride="carousel">
                   <div className="carousel-inner">
                     <div className="carousel-item active">
-                      <img src="https://picsum.photos/seed/banner1/1200/350" className="d-block w-100" alt="Sale 1" style={{ height: 350, objectFit: 'cover' }} />
-                      <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                      <img src="https://picsum.photos/seed/banner1/1200/350" className="d-block w-100 carousel-img" alt="Sale 1" />
+                      <div className="carousel-caption">
                         <h3>Top Deals Today</h3>
                         <p>Save big on everyday essentials.</p>
                       </div>
                     </div>
                     <div className="carousel-item">
-                      <img src="https://picsum.photos/seed/banner2/1200/350" className="d-block w-100" alt="Sale 2" style={{ height: 350, objectFit: 'cover' }} />
-                      <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                      <img src="https://picsum.photos/seed/banner2/1200/350" className="d-block w-100 carousel-img" alt="Sale 2" />
+                      <div className="carousel-caption">
                         <h3>New Arrivals</h3>
                         <p>Fresh products added every week.</p>
                       </div>
                     </div>
                     <div className="carousel-item">
-                      <img src="https://picsum.photos/seed/banner3/1200/350" className="d-block w-100" alt="Sale 3" style={{ height: 350, objectFit: 'cover' }} />
-                      <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                      <img src="https://picsum.photos/seed/banner3/1200/350" className="d-block w-100 carousel-img" alt="Sale 3" />
+                      <div className="carousel-caption">
                         <h3>Free Shipping</h3>
                         <p>On orders over $25.</p>
                       </div>
@@ -130,11 +132,29 @@ function App() {
               )}
 
               <div className="container py-4">
-                <h5 className="mb-3">{searchQuery ? `Results for "${searchQuery}"` : 'All Products'}</h5>
+
+                {/* Best Sellers — hidden during search */}
+                {searchQuery === '' && bestSellers.length > 0 && (
+                  <div className="mb-5">
+                    <h4 className="section-title">Best Sellers</h4>
+                    <div className="row g-3">
+                      {bestSellers.map(product => (
+                        <div className="col-sm-6 col-md-4 col-lg-2" key={product.id}>
+                          <Card product={product} onAddToCart={addToCart} />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* All Products */}
+                <h4 className="section-title">
+                  {searchQuery ? `Results for "${searchQuery}"` : 'All Products'}
+                </h4>
                 {filteredProducts.length === 0 ? (
                   <p className="text-muted">No products found.</p>
                 ) : (
-                  <div className="row g-4">
+                  <div className="row g-3">
                     {filteredProducts.map(product => (
                       <div className="col-sm-6 col-md-4 col-lg-3" key={product.id}>
                         <Card product={product} onAddToCart={addToCart} />
@@ -146,6 +166,14 @@ function App() {
             </>
           }
         />
+
+        <Route
+          path="/product/:id"
+          element={
+            <ProductDetail products={products} onAddToCart={addToCart} />
+          }
+        />
+
         <Route
           path="/cart"
           element={
