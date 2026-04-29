@@ -11,7 +11,7 @@
     {
       "id": 2,
       "name": "Arm & Hammer Toothpaste",
-      "price": 2.50,
+      "price": 2.5,
       "description": "Baking soda formula for a deep clean and fresh breath.",
       "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop",
       "bestSeller": false
@@ -19,7 +19,7 @@
     {
       "id": 3,
       "name": "Colgate Fresh Toothpaste",
-      "price": 3.50,
+      "price": 3.5,
       "description": "Triple action formula for whitening, cavity protection, and fresh breath.",
       "image": "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=300&h=200&fit=crop",
       "bestSeller": false
@@ -193,5 +193,22 @@
       "bestSeller": false
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "productId": 4,
+      "name": "Oral-B Electric Toothbrush",
+      "price": 29.99,
+      "image": "https://images.unsplash.com/photo-1559591935-b3b1d1932d95?w=300&h=200&fit=crop",
+      "quantity": 1,
+      "id": 1
+    },
+    {
+      "productId": 9,
+      "name": "Apple AirPods Pro",
+      "price": 249.99,
+      "image": "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=300&h=200&fit=crop",
+      "quantity": 1,
+      "id": 2
+    }
+  ]
 }
