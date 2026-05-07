@@ -25,16 +25,17 @@ function ShoppingCart({ cart, onRemove, onUpdateQuantity }) {
             <span className="ms-3">${item.price.toFixed(2)} each</span>
 
             <div className="d-inline ms-4">
-              <button className="btn btn-secondary btn-sm" onClick={() => onUpdateQuantity(item.id, item.quantity - 1)}>-</button>
+              <button
+                className="btn btn-secondary btn-sm"
+                onClick={() => item.quantity === 1 ? onRemove(item.id) : onUpdateQuantity(item.id, item.quantity - 1)}
+              >
+                {item.quantity === 1 ? <i className="bi bi-trash"></i> : '−'}
+              </button>
               <span className="mx-2">{item.quantity}</span>
               <button className="btn btn-secondary btn-sm" onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}>+</button>
             </div>
 
             <span className="ms-4"><strong>${(item.price * item.quantity).toFixed(2)}</strong></span>
-
-            <button className="btn btn-danger btn-sm ms-4" onClick={() => onRemove(item.id)}>
-              <i className="bi bi-trash"></i>
-            </button>
           </li>
         ))}
       </ul>

@@ -26,54 +26,73 @@ function App() {
       .then(data => setCart(data))
   }, [])
 
-  // Add to cart — POST if new, PATCH if already in cart
+  // Optimistic add — updates UI instantly, syncs to server in background
   const addToCart = async (product) => {
     const existing = cart.find(item => item.productId === product.id)
 
     if (existing) {
-      const res = await fetch(`${API_URL}/cart/${existing.id}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ quantity: existing.quantity + 1 }),
-      })
-      const updated = await res.json()
-      setCart(cart.map(item => (item.id === existing.id ? updated : item)))
+      setCart(prev => prev.map(item =>
+        item.id === existing.id ? { ...item, quantity: item.quantity + 1 } : item
+      ))
+      try {
+        const res = await fetch(`${API_URL}/cart/${existing.id}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ quantity: existing.quantity + 1 }),
+        })
+        const updated = await res.json()
+        setCart(prev => prev.map(item => item.id === existing.id ? updated : item))
+      } catch {
+        setCart(prev => prev.map(item => item.id === existing.id ? existing : item))
+      }
     } else {
-      const res = await fetch(`${API_URL}/cart`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          productId: product.id,
-          name: product.name,
-          price: product.price,
-          image: product.image,
-          quantity: 1,
-        }),
-      })
-      const newItem = await res.json()
-      setCart([...cart, newItem])
+      const tempId = `temp-${Date.now()}`
+      const tempItem = { productId: product.id, name: product.name, price: product.price, image: product.image, quantity: 1, id: tempId }
+      setCart(prev => [...prev, tempItem])
+      try {
+        const res = await fetch(`${API_URL}/cart`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ productId: product.id, name: product.name, price: product.price, image: product.image, quantity: 1 }),
+        })
+        const newItem = await res.json()
+        setCart(prev => prev.map(item => item.id === tempId ? newItem : item))
+      } catch {
+        setCart(prev => prev.filter(item => item.id !== tempId))
+      }
     }
   }
 
-  // Remove item from cart — DELETE
+  // Optimistic remove
   const removeFromCart = async (id) => {
-    await fetch(`${API_URL}/cart/${id}`, { method: 'DELETE' })
-    setCart(cart.filter(item => item.id !== id))
+    const snapshot = cart
+    setCart(prev => prev.filter(item => item.id !== id))
+    try {
+      await fetch(`${API_URL}/cart/${id}`, { method: 'DELETE' })
+    } catch {
+      setCart(snapshot)
+    }
   }
 
-  // Update quantity — PATCH (remove if quantity drops to 0)
+  // Optimistic quantity update — removes item when quantity drops to 0
   const updateQuantity = async (id, quantity) => {
     if (quantity < 1) {
       removeFromCart(id)
       return
     }
-    const res = await fetch(`${API_URL}/cart/${id}`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ quantity }),
-    })
-    const updated = await res.json()
-    setCart(cart.map(item => (item.id === id ? updated : item)))
+    const snapshot = cart
+    setCart(prev => prev.map(item => item.id === id ? { ...item, quantity } : item))
+    try {
+      const res = await fetch(`${API_URL}/cart/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ quantity }),
+      })
+      const updated = await res.json()
+      setCart(prev => prev.map(item => item.id === id ? updated : item))
+    } catch {
+      setCart(snapshot)
+    }
   }
 
   const filteredProducts = products.filter(p =>
@@ -140,7 +159,13 @@ function App() {
                     <div className="row g-3">
                       {bestSellers.map(product => (
                         <div className="col-sm-6 col-md-4 col-lg-2" key={product.id}>
-                          <Card product={product} onAddToCart={addToCart} />
+                          <Card
+                            product={product}
+                            onAddToCart={addToCart}
+                            cartItem={cart.find(item => item.productId === product.id)}
+                            onRemove={removeFromCart}
+                            onUpdateQuantity={updateQuantity}
+                          />
                         </div>
                       ))}
                     </div>
@@ -157,7 +182,13 @@ function App() {
                   <div className="row g-3">
                     {filteredProducts.map(product => (
                       <div className="col-sm-6 col-md-4 col-lg-3" key={product.id}>
-                        <Card product={product} onAddToCart={addToCart} />
+                        <Card
+                          product={product}
+                          onAddToCart={addToCart}
+                          cartItem={cart.find(item => item.productId === product.id)}
+                          onRemove={removeFromCart}
+                          onUpdateQuantity={updateQuantity}
+                        />
                       </div>
                     ))}
                   </div>
